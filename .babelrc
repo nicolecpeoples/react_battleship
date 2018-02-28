@@ -1,7 +1,6 @@
 {
 	"presets": [
-		["es2016"],
-    "react",
+		"react", "es2015", "stage-0",
 		["env", {
 			"targets": {
 				"browsers": "last 2 versions"
@@ -11,8 +10,8 @@
 		}]
 	],
 	"plugins": [
-    "babel-plugin-transform-class-properties"
-  ],
+	"transform-class-properties"
+],
   "env": {
     "test": {
       "plugins": [

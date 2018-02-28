@@ -1,17 +1,20 @@
 import React from 'react'
 
 let styles = {
+	display: 'inline-block',
 	background: 'blue',
 	height: '50px',
 	width: '50px',
 	border: '1px solid gray'
 }
 
-const Square = () => {
+const Square = (props) => {
 	return (
-		<div className="Square" style={styles}>
-
-		</div>
+		<span className="Square"
+			style={styles}
+			onClick={(e) => console.log(props.xAxis, props.yAxis)}
+		>
+		</span>
 	)
 }
 

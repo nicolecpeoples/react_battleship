@@ -1,11 +1,12 @@
 const path = require('path');
+var webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
  module.exports = {
 	 entry: './src/index.js',
 	 output: {
-		 filename: 'bundle.js',
-		 path: path.resolve(__dirname, 'public')
+		 path: path.resolve(__dirname, 'public'),
+		 filename: 'bundle.js'
 	 },
 	 devtool: 'inline-source-map',
 	 devServer: {
@@ -19,7 +20,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
+				query: {
+            presets: ['es2015',
+							'stage-0']
+            }
       },
 			{
       test: /\.(jpe?g|png|gif)$/i,   //to support eg. background-image property
