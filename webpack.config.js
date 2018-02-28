@@ -11,14 +11,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 	 devServer: {
     contentBase: './public'
    },
+	 resolve: {
+			extensions: ['.js', '.jsx', '.json']
+		},
 	 module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        loader: "babel-loader"
       },
 			{
       test: /\.(jpe?g|png|gif)$/i,   //to support eg. background-image property
